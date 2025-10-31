@@ -7,7 +7,7 @@ DATA_PATH = "data/breast-cancer.data"  # File path of the dataset
 MIN_SAMPLES_SPLIT = 5  # Minimum samples required to split a node (K)
 NUM_FOLDS = 10   # Number of folds for cross-validation
 
-# 1. Load and clean data(remove empty row and replace missing values("?") with NAN)
+# 1. Load and clean data(replace missing values("?") with NAN and remove empty row )
 def load_data(path):
     column_names = [
         "class", "age", "menopause", "tumor-size", "inv-nodes",
@@ -68,7 +68,8 @@ def predict(tree, sample):
     else:
         return "unknown"  
 
-# 5. K-FOLD Cross Validation to Randomly shuffles the dataset,splits data into K folds,trains on K-1 folds and tests on the remaining fold, and repeats the process K times and reports accuracy for each.
+''' 5. K-FOLD Cross Validation to Randomly shuffles the dataset,splits data into K folds,
+ trains on K-1 folds and tests on the remaining fold, and repeats the process K times and reports accuracy for each.'''
 
 def k_fold_cross_validation(df, k=NUM_FOLDS):
     data = df.sample(frac=1).reset_index(drop=True) 
