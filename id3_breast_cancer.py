@@ -67,18 +67,19 @@ def predict(tree, sample):
         return predict(tree[feature][value], sample)
     else:
         return "unknown"  
-
-# 5. K-FOLD Cross Validation to Randomly shuffles the dataset,splits data into K folds,trains on K-1 folds and tests on the remaining fold, and repeats the process K times and reports accuracy for each.
+    
+''' 5. K-FOLD Cross Validation to Randomly shuffles the dataset,splits data into K folds,
+ trains on K-1 folds and tests on the remaining fold, and repeats the process K times and reports accuracy for each.'''
 
 def k_fold_cross_validation(df, k=NUM_FOLDS):
     data = df.sample(frac=1).reset_index(drop=True) 
-    fold_size = len(data) // k
+    folds = np.array_split(data, k)
     accuracies = []
 
     for i in range(k):
-        start, end = i * fold_size, (i + 1) * fold_size
-        test = data.iloc[start:end]
-        train = pd.concat([data.iloc[:start], data.iloc[end:]])
+        test = folds[i]
+        train = pd.concat([folds[j] for j in range(k) if j != i])
+
 
         features = [f for f in train.columns if f != 'class']
         tree = build_tree(train, features)
