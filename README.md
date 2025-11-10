@@ -80,7 +80,7 @@ ID3_BreastCancer/
     
         source venv/bin/activate
     
-  - On Windows (Command Prompt):
+  - On Windows :
     
         venv\Scripts\activate
 
