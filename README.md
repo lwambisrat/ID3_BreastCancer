@@ -72,23 +72,23 @@ ID3_BreastCancer/
 
 1. Create a virtual environment:
    
-   `uv venv venv`
+       uv venv venv 
 
 3. Activate the virtual environment:
 
   - On Linux/macOS:
     
-    `source venv/bin/activate`
+        source venv/bin/activate
     
   - On Windows (Command Prompt):
     
-    `venv\Scripts\activate`
+        venv\Scripts\activate
 
 3. Install the required Python packages
  
-    `uv pip install pandas numpy matplotlib`
+        uv pip install pandas numpy matplotlib
   
-    `uv pip install ipykernel -U --force-reinstall`
+        uv pip install ipykernel -U --force-reinstall
 
 ---
 
@@ -97,7 +97,7 @@ ID3_BreastCancer/
  #### Option 1: 
  - Run the classifier script:
   
-     `python id3_breast_cancer.py `   
+       python id3_breast_cancer.py   
  #### Option 2:
 - Open the file `id3_breast_cancer.ipynb` in VS Code.  
 - Select the Python environment/kernel you created.  
