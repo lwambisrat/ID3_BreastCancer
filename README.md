@@ -106,7 +106,7 @@ The script will:
 - Load and clean the breast cancer dataset from `data/breast-cancer.data`
 - Perform 10-fold cross-validation
 - Print accuracy for each fold and the average accuracy
-- The sample out put is going to be same format with below logs
+- The out put is going to be same format with below logs
   
   `Loaded 277 samples after cleaning.` 
 
